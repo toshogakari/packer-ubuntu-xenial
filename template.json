@@ -50,6 +50,10 @@
       "type": "ansible-local",
       "playbook_file": "ansible/playbook.yml",
       "playbook_dir": "ansible"
+    },
+    {
+      "type": "shell",
+      "scripts": "scripts/zerofill.sh"
     }
   ],
   "post-processors": [
@@ -65,7 +69,7 @@
         "artifact": "pyar6329/xenial64",
         "artifact_type": "vagrant.box",
         "metadata": {
-          "version": "20160629",
+          "version": "20160630",
           "description": "Ubuntu 16.04 (Xenial Xerus)",
           "created_at": "{{timestamp}}",
           "provider": "virtualbox"
