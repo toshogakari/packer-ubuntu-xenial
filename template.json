@@ -69,7 +69,7 @@
         "artifact": "pyar6329/xenial64",
         "artifact_type": "vagrant.box",
         "metadata": {
-          "version": "20160630",
+          "version": "20160702",
           "description": "Ubuntu 16.04 (Xenial Xerus)",
           "created_at": "{{timestamp}}",
           "provider": "virtualbox"

@@ -6,7 +6,7 @@ sudo apt-get -y install python2.7
 sudo apt-get -y install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
-sudo apt install -y ansible linux-headers-$(uname -r) build-essential dkms
+sudo apt install -y ansible linux-headers-$(uname -r) build-essential dkms nfs-common portmap
 
 sudo mkdir /media/VBoxGuestAdditions
 sudo mount -o loop,ro /home/vagrant/VBoxGuestAdditions.iso /media/VBoxGuestAdditions
