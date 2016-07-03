@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
 
 export DEBIAN_FRONTEND=noninteractive
-sudo apt update
-sudo apt-get -y install python2.7
-sudo apt-get -y install software-properties-common
+
+sudo apt-get install -y ntp ntpdate
+sudo cp /tmp/packer/ntp.conf /etc/ntp.conf
+sudo systemctl stop ntp.service
+sudo ntpdate ntp.nict.jp
+sudo systemctl restart ntp.service
+
+sudo apt-get update
+sudo apt-get install -y python2.7
+sudo apt-get install -y software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
-sudo apt update
-sudo apt install -y ansible linux-headers-$(uname -r) build-essential dkms nfs-common portmap
+sudo apt-get update
+sudo apt-get install -y ansible linux-headers-$(uname -r) build-essential dkms nfs-common portmap
 
 sudo mkdir /media/VBoxGuestAdditions
 sudo mount -o loop,ro /home/vagrant/VBoxGuestAdditions.iso /media/VBoxGuestAdditions
